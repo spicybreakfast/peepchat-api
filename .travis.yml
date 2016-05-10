@@ -5,7 +5,13 @@ otp_release:
   - 18.3
 sudo: false
 addons:
-  postgresql: '9.4' # Use postgres 9.4
+  postgresql: '9.4'
   before_script:
-    # Create the test database
     - psql -c 'create database peepchat_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: IupY5mqlK89DQqgNzPuDBhkSKMwzHLW3GOJ1mxeNyPckfwTjtEfSH9kksZG0qpu28YueqzoVRPWZHNmTqj0qIfiC5VmGnQGIKjUGpaBSkAS9Sdj2XZf1sGTfiYY+xb5eKkr/52eOzZioOQdvmVaA7jb9hTn/JW8W+PT6FpW1BWpRxyxuc2/TT6oyWU+pT+P8oqs5rBsFsvqcgYNfoNlk8hSGSZ8Qbj9bz86NbTQeoEjkUZLCI4ucCIlolM3luhwPixlUDyR6d3WFshbkb0y2cL/kHpQwpzQrjdnS6yhNpyXvo9h3vFM+sgXIbVc0YUFSI/QOnTfspAGaLwa7hn02iNPEie/j1mk5svJjPH/+j28S22vhgkNueL3ebzP5V5FyOF2SBLZiJfcg0Y9BS5nXaJcwYYNAQQQwiICNqpG9vvpsfja59qmz6htzOcYgLcevaBpXvlBnmOnJVb7vCjPcI63kcVzLCi65yQUbmkHqAv8wJHKDit3RW7yKSOVLAxPgnwjAbnFBjx0KfAVeOyZ80h91Mmwm/VU8Xxj0pwe97EiIxTiPVTUS92LH2tB73g5W23iUwgOfUJFPu9zr2ZFs1r8GLTZIXWzSCw/EfMqpX+8GItwjyGIxlazQ4bjx0lOVkA6+zn/RoQQ0tq4tJsP4uJgaaIw6+lgT3Qaqzot5rf0=
+  app: glacial-savannah-73107
+  on:
+    repo: spicybreakfast/peepchat-api
