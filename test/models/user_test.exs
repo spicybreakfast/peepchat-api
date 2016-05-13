@@ -36,7 +36,8 @@ defmodule Peepchat.UserTest do
   end
 
   test "short password doesn't work" do
-    changeset = User.changeset(%User{}, %{email: "joe@example.com",
+    changeset = User.changeset(%User{}, %{
+     email: "joe@example.com",
      password: "1lh2d",
      password_confirmation: "1lh2d"})
    refute changeset.valid?
